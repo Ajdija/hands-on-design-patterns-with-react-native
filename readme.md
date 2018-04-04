@@ -1,6 +1,6 @@
 #### Hands-on Design Patterns with React Native
 
-This is a public repository provided to a book readers and potential book readers to access full examples provided in a book.
+This is a public repository provided to a book readers and potential book readers. Here you can access full examples that are mentioned in a book but could not fit entirely. Each example is standalone and required you to install dependencies (`yarn install`) and expo run within that example directory (`yarn start`).
 
 #### Author note
 
