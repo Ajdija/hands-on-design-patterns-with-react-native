@@ -2,6 +2,7 @@ import Immutable from 'immutable';
 import { ReduceStore } from 'flux/utils';
 import TasksActionTypes from './TasksActionTypes';
 import AppDispatcher from './AppDispatcher';
+import data from './tasks.json';
 
 class TaskStore extends ReduceStore {
     constructor() {
@@ -9,7 +10,7 @@ class TaskStore extends ReduceStore {
     }
 
     getInitialState() {
-        return Immutable.List([]);
+        return Immutable.List([...data.tasks]);
     }
 
     reduce(state, action) {

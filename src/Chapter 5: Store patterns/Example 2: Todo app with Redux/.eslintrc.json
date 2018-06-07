@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "comma-dangle": ["error", "never"],
+    "no-use-before-define": ["error", { "variables": false }],
+    "indent": ["error", 4],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "class-methods-use-this": [0]
+  },
+  "parser": "babel-eslint", // usage with babel transpiler
+  "extends": "airbnb"
+}
