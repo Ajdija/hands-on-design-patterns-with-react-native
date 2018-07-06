@@ -1,0 +1,8 @@
+const ActionTypes = {
+    ADD_TASK: 'ADD_TASK',
+    TASK_FETCH_START: 'TASK_FETCH_START',
+    TASK_FETCH_COMPLETE: 'TASK_FETCH_COMPLETE',
+    TASK_FETCH_ERROR: 'TASK_FETCH_ERROR'
+};
+
+export default ActionTypes;
