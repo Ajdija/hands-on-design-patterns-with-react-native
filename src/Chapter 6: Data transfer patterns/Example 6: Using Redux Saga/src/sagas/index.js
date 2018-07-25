@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects';
+import { watchLastFetchTasks } from './fetchTasks';
 
 function* rootSaga() {
-    yield all([
-    ]);
+    yield all([watchLastFetchTasks()]);
 }
 
 export default rootSaga;

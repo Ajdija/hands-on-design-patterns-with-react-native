@@ -1,23 +1,10 @@
 import React from 'react';
 import { Provider, connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Immutable from 'immutable';
 import store from './data/AppStore';
 import AppView from './views/AppView';
 import TaskActions from './data/TaskActions';
 import { TasksPropTypes } from './data/TasksActionTypes';
-
-export const fetchTasks = (dispatch, getState) => {
-    if (!getState().tasks.isLoading) {
-        TaskActions.fetchStart(dispatch)();
-        return fetch('http://localhost:3000/tasks')
-            .then(response => response.json())
-            .then(responseJSON =>
-                TaskActions.fetchComplete(dispatch)(Immutable.List(responseJSON)))
-            .catch(TaskActions.fetchError(dispatch));
-    }
-    return null;
-};
 
 class TasksFetchWrapper extends React.Component {
     componentDidMount = () => this.props.fetchTasks();
@@ -31,8 +18,8 @@ TasksFetchWrapper.propTypes = {
 
 const mapStateToProps = state => ({ tasks: state.tasks });
 const mapDispatchToProps = dispatch => ({
-    fetchTasks: () => dispatch(fetchTasks),
-    addTask: () => dispatch(TaskActions.addTask)
+    fetchTasks: TaskActions.fetchStart(dispatch),
+    addTask: TaskActions.addTask(dispatch)
 });
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(TasksFetchWrapper);
 const TasksApp = () => (
