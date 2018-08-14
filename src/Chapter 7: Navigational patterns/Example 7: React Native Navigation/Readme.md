@@ -24,6 +24,13 @@ or
 Run `react-native start --reset-cache`
 
 ##### I'm getting ":CFBundleIdentifier, Does Not Exist" error
-See [":CFBundleIdentifier", Does Not Exist #7308](https://github.com/facebook/react-native/issues/7308)
+First, try this:
+```
+cd node_modules/react-native/third-party/glog-0.3.4/
+./configure
+cd ../../../..
+react-native run-ios
+```
+if still the problem persists then see [":CFBundleIdentifier", Does Not Exist #7308](https://github.com/facebook/react-native/issues/7308)
 
-Removing `node_modules` and running `react-native upgrade` may fix this.
+Removing `node_modules` then running `yarn install` and `react-native upgrade` may fix this.

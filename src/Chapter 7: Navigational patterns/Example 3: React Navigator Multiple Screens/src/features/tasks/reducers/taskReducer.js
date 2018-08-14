@@ -13,6 +13,7 @@ const taskReducer = (state = Immutable.Map({
             return state;
         }
         return state.update('entities', entities => entities.push({
+            id: entities.size + 1,
             name: action.task.name,
             description: action.task.description,
             likes: 0
