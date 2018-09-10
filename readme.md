@@ -17,14 +17,15 @@ https://github.com/creationix/nvm#install-script
 
 2. Install Node.js using nvm
 ```bash
+
 nvm install 8.11.4
+
 ```
 
 3. Install watchman
 https://facebook.github.io/watchman/docs/install.html
 
 4. Install the create-react-native-app CLI
-
 ```bash
 
 $ npm install -g create-react-native-app
