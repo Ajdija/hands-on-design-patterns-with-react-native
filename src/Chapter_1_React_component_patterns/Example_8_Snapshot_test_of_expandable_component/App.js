@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const HelloText = ({children, ...otherProps}) => (
+const HelloText = ({ children, ...otherProps }) => (
     <Text {...otherProps}>{children}</Text>
 );
 export default class App extends React.Component {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
         this.state = {
             // default state on first render
             expanded: false
-        }
+        };
     }
 
     expandOrCollapse() {

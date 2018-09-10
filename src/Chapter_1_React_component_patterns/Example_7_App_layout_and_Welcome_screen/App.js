@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const AppLayout = ({header, mainContent, footer}) => (
+const AppLayout = ({Header, MainContent, Footer}) => (
     <View style={styles.container}>
-        <View style={styles.layoutHeader}>{header}</View>
-        <View style={styles.layoutContent}>{mainContent}</View>
-        <View style={styles.layoutFooter}>{footer}</View>
+        <View style={styles.layoutHeader}>{Header}</View>
+        <View style={styles.layoutContent}>{MainContent}</View>
+        <View style={styles.layoutFooter}>{Footer}</View>
     </View>
 );
 
@@ -15,9 +15,9 @@ const WelcomeFooter = () => <View><Text>Footer</Text></View>;
 
 const WelcomeScreen = () => (
     <AppLayout
-        header={<WelcomeHeader />}
-        mainContent={<WelcomeContent />}
-        footer={<WelcomeFooter />}
+        Header={<WelcomeHeader />}
+        MainContent={<WelcomeContent />}
+        Footer={<WelcomeFooter />}
     />
 );
 

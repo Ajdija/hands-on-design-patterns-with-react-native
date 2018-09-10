@@ -12,13 +12,18 @@ Mateusz Grzesiukiewicz
 
 #### Setup ####
 
-1. Download and install Node.js 8.10+
-https://nodejs.org/en/download/
+1. Install nvm
+https://github.com/creationix/nvm#install-script
 
-2. Install watchman
+2. Install Node.js using nvm
+```bash
+nvm install 8.11.4
+```
+
+3. Install watchman
 https://facebook.github.io/watchman/docs/install.html
 
-3. Install the create-react-native-app CLI
+4. Install the create-react-native-app CLI
 
 ```bash
 
@@ -41,6 +46,10 @@ $ yarn install --pure-lockfile
 
 ` --pure-lockfile` is used to ensure all dependencies are installed based on the `yarn.lock` file I checked-in. You may omit it to install latest dependencies but those may include breaking changes and the build may fail.
 
+- Change Node.js version to the expected one.
+```bash
+nvm use
+```
 
 - Run on iOS (If have a MacBook)
 
