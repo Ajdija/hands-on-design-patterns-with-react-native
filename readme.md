@@ -10,29 +10,78 @@ Good luck with this endeavours!
 
 Mateusz Grzesiukiewicz
 
-#### Installation step-by-step
+#### Setup ####
 
-1. Navigate to the example directory, for instance:
-```
-cd src/Chapter\ 1\:\ React\ component\ patterns/Example\ 1\:\ Hello\ World/
+1. Download and install Node.js 8.10+
+https://nodejs.org/en/download/
+
+2. Install watchman
+https://facebook.github.io/watchman/docs/install.html
+
+3. Install the create-react-native-app CLI
+
+```bash
+
+$ npm install -g create-react-native-app
+
 ```
 
-2. Install dependencies
+#### Run projects ####
+
+- Open terminal
+
+- Go to the example folder and install dependencies. Example folders are located in src directory. You need to change directory to the specific Example directory.
+For instance:
+
+```bash
+$ cd ./src/Chapter_1_React_component_patterns/Example_1_Hello_World
+$ yarn install --pure-lockfile
+
 ```
-yarn install --pure-lockfile
-```
+
 ` --pure-lockfile` is used to ensure all dependencies are installed based on the `yarn.lock` file I checked-in. You may omit it to install latest dependencies but those may include breaking changes and the build may fail.
 
-3. Install Expo
+
+- Run on iOS (If have a MacBook)
+
+1. Install XCode
+
+2. Run on terminal
+
+```bash
+
+$ yarn run ios
+
+```
+
+- Run on Android
+
+1. Install Java JDK
+
+2. Install Android Studio and config Android Studio AVD emulator
+
+3. Open emulator
+
+4. Run on terminal
+
+```bash
+
+$ yarn run android
+
+```
+
+- Run on a real phone
+
+1. Install Expo
 
 [Installation guide](https://docs.expo.io/versions/latest/introduction/installation)
 
-You will need Expo XDE for your desktop. If you want to check apps on your real phone, then also install respective iOS or Android application from the above link.
+You will need Expo XDE for your desktop. Also install respective iOS or Android application from the above link.
 
-4. Open Expo XDE
+2. Open Expo XDE
 
 Choose `Open existing project...` and navigate to example directory.
 
 The build will run and feedback will be displayed on the console.
 
-When the build finishes send yourself a link to the app. I prefer to use share button at the top and send myself link in an email.
+When the build finishes send yourself a link to the app. I prefer to use share button at the top and send myself link in an email that I open on the device.
