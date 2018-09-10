@@ -16,6 +16,7 @@ Mateusz Grzesiukiewicz
 https://github.com/creationix/nvm#install-script
 
 2. Install Node.js using nvm
+
 ```bash
 
 nvm install 8.11.4
@@ -26,6 +27,7 @@ nvm install 8.11.4
 https://facebook.github.io/watchman/docs/install.html
 
 4. Install the create-react-native-app CLI
+
 ```bash
 
 $ npm install -g create-react-native-app
@@ -40,6 +42,7 @@ $ npm install -g create-react-native-app
 For instance:
 
 ```bash
+
 $ cd ./src/Chapter_1_React_component_patterns/Example_1_Hello_World
 $ yarn install --pure-lockfile
 
@@ -48,8 +51,11 @@ $ yarn install --pure-lockfile
 ` --pure-lockfile` is used to ensure all dependencies are installed based on the `yarn.lock` file I checked-in. You may omit it to install latest dependencies but those may include breaking changes and the build may fail.
 
 - Change Node.js version to the expected one.
+
 ```bash
+
 nvm use
+
 ```
 
 - Run on iOS (If have a MacBook)
