@@ -46,7 +46,7 @@ GeneralAppView.propTypes = {
     content: PropTypes.element.isRequired
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     appContainer: { flex: 1, backgroundColor: '#fff' },
     headerText: { fontSize: 35 },
     headerMenuIcon: { justifyContent: 'center' },

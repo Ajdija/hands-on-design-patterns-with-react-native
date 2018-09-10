@@ -8,7 +8,7 @@ import { TaskPropType } from '../state/types';
 const TaskList = ({
     tasks, isLoading, hasError, errorMsg
 }) => (
-    <View>
+    <View style={styles.taskList}>
         {hasError &&
             <View>
                 <Text>{errorMsg}</Text>
@@ -57,6 +57,9 @@ TaskList.propTypes = {
 };
 
 const styles = StyleSheet.create({
+    taskList: {
+        flex: 1
+    },
     task: {
         flex: 1,
         flexDirection: 'row'
