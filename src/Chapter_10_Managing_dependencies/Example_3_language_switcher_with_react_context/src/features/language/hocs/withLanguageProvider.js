@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { languageSelector } from '../state/selectors';
+import languageSelector from '../state/selectors';
 import { LanguageProvider } from '../context';
 
 const withLanguageProvider = WrappedComponent => connect(state => ({

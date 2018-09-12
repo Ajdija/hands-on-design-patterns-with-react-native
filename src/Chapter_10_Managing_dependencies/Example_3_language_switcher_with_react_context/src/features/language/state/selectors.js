@@ -1,1 +1,3 @@
-export const languageSelector = state => state.language;
+const languageSelector = state => state.language;
+
+export default languageSelector;

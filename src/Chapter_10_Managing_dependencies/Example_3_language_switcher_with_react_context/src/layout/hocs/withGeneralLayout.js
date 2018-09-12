@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GeneralAppView from '../views/GeneralAppView';
-import { languageSelector } from '../../features/language/state/selectors';
+import languageSelector from '../../features/language/state/selectors';
 
 
 const withGeneralLayout = ScreenComponent => connect(state => ({

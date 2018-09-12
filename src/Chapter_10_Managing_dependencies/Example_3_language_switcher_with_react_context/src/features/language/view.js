@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     selectedText: { color: '#000' }
 });
 
-export const LanguageSwitcherView = props => (
+const LanguageSwitcherView = props => (
     <Fragment>
         <TouchableHighlight onPress={() => props.onLanguageChange(LANG_ENGLISH)}>
             <Text
