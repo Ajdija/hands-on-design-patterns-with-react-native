@@ -9,8 +9,12 @@ const mapDispatchToProps = dispatch => ({
 
 const fetchTasks = (WrappedComponent) => {
     class TasksFetchWrapper extends React.Component {
-        componentDidMount = () => this.props.fetchTasks();
-        render = () => <WrappedComponent {...this.props} />;
+        componentDidMount() {
+            this.props.fetchTasks();
+        }
+        render() {
+            return <WrappedComponent {...this.props} />;
+        }
     }
     TasksFetchWrapper.propTypes = {
         fetchTasks: PropTypes.func.isRequired
