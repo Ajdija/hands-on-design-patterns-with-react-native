@@ -32,9 +32,9 @@
     "test": "npm-run-all prepare start:test",
     "lint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore src",
     "server": "node_modules/json-server/bin/index.js --watch src/features/tasks/data/tasks.json",
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "build:storybook": "rnstl",
-    "build:typescript": "node_modules/typescript/bin/tsc",
+    "build:typescript": "node_modules/typescript/bin/tsc --resolveJsonModule",
     "eject": "react-native-scripts eject"
   },
   "jest": {
