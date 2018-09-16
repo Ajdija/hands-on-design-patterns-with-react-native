@@ -1,6 +1,5 @@
 {
   "presets": ["babel-preset-expo"],
-  "sourceMaps": "inline",
   "env": {
     "development": {
       "plugins": ["transform-react-jsx-source"]
