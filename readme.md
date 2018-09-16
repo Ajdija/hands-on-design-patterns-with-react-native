@@ -92,6 +92,9 @@ $ yarn run ios:storybook
 
 ```
 
+If having troubles then see [Frequently asked questions section](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#faq).
+
+
 ##### Run on Android
 
 1. Install Java JDK
@@ -124,6 +127,8 @@ $ yarn run android:storybook
 
 ```
 
+If having troubles then see [Frequently asked questions section](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#faq).
+
 ##### Run on a real phone
 
 1. Install Expo
@@ -139,3 +144,25 @@ Choose `Open existing project...` and navigate to example directory.
 The build will run and feedback will be displayed on the console.
 
 When the build finishes send yourself a link to the app. I prefer to use share button at the top and send myself link in an email that I open on the device.
+
+3. You may need to be connected to the same WiFi on the computer and a phone. Public WiFi may not work.
+
+#### FAQ
+
+##### Bootstrap note
+All of the examples from this book were bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+The most recent version of Create React Native App guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+
+##### I see the app but it says "Network request failed"
+If you are running examples from chapters 6, 7, 8, 9, 10 or 11 you should also start the server first.
+```bash
+
+$ yarn run server
+
+```
+
+##### Websocket connection error
+Sometimes you need to close emulator and then rerun either `yarn run ios` or `yarn run android`. CTRL+R / CMD+R may give you the old app in some circumstances so closing the emulator and rerunning the command is the quickest fix.
+
+##### Storybook not showing, instead I see a regular app.
+Sometimes you need to close emulator and then run either `yarn run ios:storybook` or `yarn run android:storybook`. CTRL+R / CMD+R may give you the old app in some circumstances so closing the emulator and rerunning the command is the quickest fix.
