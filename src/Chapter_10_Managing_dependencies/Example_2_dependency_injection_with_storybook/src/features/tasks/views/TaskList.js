@@ -53,7 +53,7 @@ TaskList.propTypes = {
     isLoading: PropTypes.bool.isRequired,
     hasError: PropTypes.bool.isRequired,
     errorMsg: PropTypes.string,
-    NavButton: PropTypes.element.isRequired
+    NavButton: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
