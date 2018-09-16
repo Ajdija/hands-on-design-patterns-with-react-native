@@ -15,8 +15,12 @@ const fetchTask = (WrappedComponent) => {
         }
 
         class TaskFetchWrapper extends React.Component {
-            componentDidMount = () => this.props.fetchTask(props.taskId);
-            render = () => <WrappedComponent {...this.props} />;
+            componentDidMount() {
+                this.props.fetchTask(props.taskId);
+            }
+            render() {
+                return <WrappedComponent {...this.props} />;
+            }
         }
 
         TaskFetchWrapper.propTypes = {
