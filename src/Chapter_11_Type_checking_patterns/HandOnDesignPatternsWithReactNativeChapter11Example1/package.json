@@ -43,9 +43,6 @@
         "useBabelrc": true
       }
     },
-    "transformIgnorePatterns": [
-      "node_modules/redux-saga"
-    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
