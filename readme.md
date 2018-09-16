@@ -11,22 +11,25 @@ Good luck with this endeavours!
 Mateusz Grzesiukiewicz
 
 #### Setup ####
+1. Install Git https://git-scm.com/downloads
+2. Install Node.js 8.X.
+On Linux or Mac you should use nvm.
+L/M, 1.1) Install nvm https://github.com/creationix/nvm#install-script
+L/M, 1.2) Install Node.js using nvm $ nvm install 8.11.4
 
-1. Install nvm
-https://github.com/creationix/nvm#install-script
+On Windows install Node.js with executable file.
+W, 1.1) Install Node.js 8.X https://nodejs.org/en/download/
+Install Git https://git-scm.com/downloads
+Install watchman https://facebook.github.io/watchman/docs/install.html
+Install the create-react-native-app CLI
+$ npm install -g create-react-native-app
 
-2. Install Node.js using nvm
+3. Install yarn https://yarnpkg.com/lang/en/docs/install/﻿
 
-```bash
-
-nvm install 8.11.4
-
-```
-
-3. Install watchman
+4. Install watchman
 https://facebook.github.io/watchman/docs/install.html
 
-4. Install the create-react-native-app CLI
+5. Install the create-react-native-app CLI
 
 ```bash
 
@@ -36,33 +39,45 @@ $ npm install -g create-react-native-app
 
 #### Run projects ####
 
-- Open terminal
+1. Open terminal
 
-- Go to the example folder and install dependencies. Example folders are located in src directory. You need to change directory to the specific Example directory.
-For instance:
-
+2. Download code files from GitHub repository.
+GitHub repository link: https://github.com/Ajdija/hands-on-design-patterns-with-react-native
+Example terminal command downloading the code:
 ```bash
+$ git clone git@github.com:Ajdija/hands-on-design-patterns-with-react-native.git
+```
 
+3. Go to the example folder and install dependencies. Example folders are located in src directory within downloaded code files directory. You need to change directory to the specific Example directory. For instance:
+```bash
 $ cd ./src/Chapter_1_React_component_patterns/Example_1_Hello_World
 $ yarn install --pure-lockfile
-
 ```
+--pure-lockfile is used to ensure all dependencies are installed based on the yarn.lock file I checked-in. You may omit it to install latest dependencies but those may include breaking changes and the build may fail.
 
-` --pure-lockfile` is used to ensure all dependencies are installed based on the `yarn.lock` file I checked-in. You may omit it to install latest dependencies but those may include breaking changes and the build may fail.
-
-- Change Node.js version to the expected one.
-
+4. **Linux and Mac** users should change the Node.js version to the expected one using the below command.
 ```bash
-
-nvm use
-
+$ nvm use
 ```
 
-- Run on iOS (If have a MacBook)
+**Further steps depend on the hardware you have and the emulator you want to use.**
+- [Run on iOS (If you have a MacBook)](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#run-on-ios)
+- [Run on Android](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#run-on-android)
+- [Run on a real phone](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#run-on-a-real-phone)
+
+##### Run on iOS
 
 1. Install XCode
 
-2. Run on terminal
+2. If running Examples from chapter 6, 7, 8, 9, 10, 11 then you need to run the below command in terminal to bring up a local server.
+If you skipped the setup process above then remember to navigate to the respective example directory first.
+```bash
+
+$ yarn run server
+
+```
+
+3. Run on terminal
 
 ```bash
 
@@ -70,15 +85,31 @@ $ yarn run ios
 
 ```
 
-- Run on Android
+If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
+```bash
+
+$ yarn run ios:storybook
+
+```
+
+##### Run on Android
 
 1. Install Java JDK
 
 2. Install Android Studio and config Android Studio AVD emulator
 
-3. Open emulator
 
-4. Run on terminal
+3. If running Examples from chapter 6, 7, 8, 9, 10, 11 then you need to run the below command in terminal to bring up a local server.
+If you skipped the setup process above then remember to navigate to the respective example directory first.
+```bash
+
+$ yarn run server
+
+```
+
+4. Open emulator
+
+5. Run on terminal
 
 ```bash
 
@@ -86,7 +117,14 @@ $ yarn run android
 
 ```
 
-- Run on a real phone
+If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
+```bash
+
+$ yarn run android:storybook
+
+```
+
+##### Run on a real phone
 
 1. Install Expo
 
