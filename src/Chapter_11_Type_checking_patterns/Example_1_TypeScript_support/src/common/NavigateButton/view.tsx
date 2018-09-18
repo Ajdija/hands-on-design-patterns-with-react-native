@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { Button } from 'react-native';
-import { NavigationInjectedProps, NavigationParams } from 'react-navigation';
+import {
+    NavigationParams, NavigationScreenProp, NavigationState
+} from 'react-navigation';
 
 type NavigateButtonProps = {
     to: 'string',
     data: any,
     text: 'string',
-} & NavigationInjectedProps<NavigationParams>;
+    navigation: NavigationScreenProp<NavigationState, NavigationParams>
+};
 
 export const NavigateButton:React.SFC<NavigateButtonProps> = ({
     navigation, to, data, text
