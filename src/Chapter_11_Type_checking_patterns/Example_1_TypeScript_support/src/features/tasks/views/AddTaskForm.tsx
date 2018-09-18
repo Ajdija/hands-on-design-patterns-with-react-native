@@ -9,6 +9,7 @@ export interface TaskState {
     name: string
     description?: string
 }
+
 export interface AddTaskProps {
     addTask: (task: TaskState) => void
 }
@@ -65,4 +66,3 @@ const styles = StyleSheet.create({
 });
 
 export default AddTaskForm;
-
