@@ -1,9 +1,10 @@
-import { call, put, takeLatest } from 'redux-saga/es/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import TasksActionTypes from '../actions/TasksActionTypes';
 import { ActionCreators } from '../actions/TaskActions';
 import apiFetch from '../../../common/utils/apiFetch';
+import { FetchTaskStartActionType } from '../actions/types';
 
-export function* fetchTask(action) {
+export function* fetchTask(action: FetchTaskStartActionType) {
     const task = yield call(apiFetch, `tasks/${action.payload.taskId}`);
     if (task.error) {
         yield put(ActionCreators.fetchTaskError(task.error));

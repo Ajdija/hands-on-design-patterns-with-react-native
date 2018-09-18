@@ -561,6 +561,26 @@
     pouchdb-collections "^1.0.1"
     tiny-queue "^0.2.1"
 
+"@redux-saga/deferred@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@redux-saga/deferred/-/deferred-1.0.0-beta.2.tgz#676d40caf17486349a24629918ccc8e0277d8889"
+
+"@redux-saga/delay-p@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@redux-saga/delay-p/-/delay-p-1.0.0-beta.2.tgz#5b6ba15c72e5a1178e66148dfd5edd03c0481387"
+  dependencies:
+    "@redux-saga/symbols" "^1.0.0-beta.2"
+
+"@redux-saga/is@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@redux-saga/is/-/is-1.0.0-beta.2.tgz#e1d0714c75bba985ea323a3c2655724dd85e8008"
+  dependencies:
+    "@redux-saga/symbols" "^1.0.0-beta.2"
+
+"@redux-saga/symbols@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@redux-saga/symbols/-/symbols-1.0.0-beta.2.tgz#4ee36997971e974f64532fe0b1f398f2a6ce41b0"
+
 "@segment/loosely-validate-event@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@segment/loosely-validate-event/-/loosely-validate-event-1.1.2.tgz#d77840999e3f7e43e74b3b0d43391c1526f793b8"
@@ -9765,9 +9785,22 @@ redux-logger@^2.7.4:
   dependencies:
     deep-diff "0.3.4"
 
-redux-saga@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.0.tgz#0a231db0a1489301dd980f6f2f88d8ced418f724"
+redux-saga@v1.0.0-beta.2:
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-1.0.0-beta.2.tgz#6f87a491dbd35bc78d4b8a3433c064f833df9789"
+  dependencies:
+    "@redux-saga/deferred" "^1.0.0-beta.2"
+    "@redux-saga/delay-p" "^1.0.0-beta.2"
+    "@redux-saga/is" "^1.0.0-beta.2"
+    "@redux-saga/symbols" "^1.0.0-beta.2"
+    redux ">=0.10 <5"
+
+"redux@>=0.10 <5", redux@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.0.tgz#aa698a92b729315d22b34a0553d7e6533555cc03"
+  dependencies:
+    loose-envify "^1.1.0"
+    symbol-observable "^1.2.0"
 
 redux@^3.6.0:
   version "3.7.2"
@@ -9777,13 +9810,6 @@ redux@^3.6.0:
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
-
-redux@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.0.tgz#aa698a92b729315d22b34a0553d7e6533555cc03"
-  dependencies:
-    loose-envify "^1.1.0"
-    symbol-observable "^1.2.0"
 
 regenerate@^1.2.1:
   version "1.4.0"

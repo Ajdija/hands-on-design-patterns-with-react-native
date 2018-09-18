@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/es/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import Immutable from 'immutable';
 import TasksActionTypes from '../actions/TasksActionTypes';
 import { ActionCreators } from '../actions/TaskActions';

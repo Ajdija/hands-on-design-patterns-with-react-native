@@ -66,7 +66,8 @@
   "types": [
     "react",
     "react-dom",
-    "react-native"
+    "react-native",
+    "./node_modules/react-native/effects.d.ts"
   ],
   "compileOnSave": false
 }
