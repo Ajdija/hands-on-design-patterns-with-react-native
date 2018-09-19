@@ -19,7 +19,7 @@
     "lint:typescript": "./node_modules/tslint/bin/tslint -c tslint.json --project tsconfig.json",
     "lint:eslint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore src",
     "lint": "npm-run-all lint:*",
-    "server": "node_modules/json-server/bin/index.js --watch src/features/tasks/data/tasks.json",
+    "server": "node node_modules/json-server/bin/index.js --watch src/features/tasks/data/tasks.json",
     "clean": "rimraf build",
     "build:storybook": "rnstl",
     "build:typescript": "node_modules/typescript/bin/tsc --resolveJsonModule",

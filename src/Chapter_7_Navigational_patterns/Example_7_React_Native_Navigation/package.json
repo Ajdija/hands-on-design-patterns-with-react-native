@@ -8,7 +8,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "server": "./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
+    "server": "node ./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
   },
   "dependencies": {
     "global": "^4.3.2",

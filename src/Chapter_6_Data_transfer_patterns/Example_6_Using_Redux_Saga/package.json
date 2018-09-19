@@ -21,7 +21,7 @@
     "ios": "react-native run-ios",
     "test": "node node_modules/jest/bin/jest.js",
     "lint": "./node_modules/eslint/bin/eslint.js src",
-    "server": "./node_modules/json-server/bin/index.js --watch ./src/data/tasks.json"
+    "server": "node ./node_modules/json-server/bin/index.js --watch ./src/data/tasks.json"
   },
   "jest": {
     "preset": "jest-expo"
