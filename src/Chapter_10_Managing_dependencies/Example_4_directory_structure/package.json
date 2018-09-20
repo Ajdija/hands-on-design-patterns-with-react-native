@@ -11,7 +11,7 @@
     "ios": "yarn run prestorybook && ./node_modules/react-native-scripts/build/bin/react-native-scripts.js ios",
     "ios:storybook": "yarn run prestorybook && concurrently \"storybook start -p 7007\" \"REACT_NATIVE_IS_STORY_BOOK=true ./node_modules/react-native-scripts/build/bin/react-native-scripts.js ios\"",
     "test": "node node_modules/jest/bin/jest.js",
-    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "lint": "node ./node_modules/eslint/bin/eslint.js src",
     "prestorybook": "rnstl",
     "server": "node ./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
   },
