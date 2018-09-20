@@ -12,25 +12,16 @@ Mateusz Grzesiukiewicz
 
 #### Setup ####
 1. Install Git https://git-scm.com/downloads
-2. Install Node.js 8.X.
-On Linux or Mac you should use nvm.
-L/M, 1.1) Install nvm https://github.com/creationix/nvm#install-script
-L/M, 1.2) Install Node.js using nvm $ nvm install 8.11.4
-
-On Windows install Node.js with executable file.
-W, 1.1) Install Node.js 8.X https://nodejs.org/en/download/
-Install Git https://git-scm.com/downloads
-Install watchman https://facebook.github.io/watchman/docs/install.html
-Install the create-react-native-app CLI
-$ npm install -g create-react-native-app
-
-3. Install yarn https://yarnpkg.com/lang/en/docs/install/﻿
-
-4. Install watchman
-https://facebook.github.io/watchman/docs/install.html
-
-5. Install the create-react-native-app CLI
-
+1. Install Node.js 8.X.
+   1. Linux/Mac:
+      1. Install nvm https://github.com/creationix/nvm#install-script
+      1. Linux/Mac Install Node.js using nvm $ nvm install 8.11.4
+   1. Windows: install Node.js with executable file.
+      1. Install Node.js 8.X https://nodejs.org/en/download/
+1. Install Git https://git-scm.com/downloads
+1. Install yarn https://yarnpkg.com/
+1. Install watchman https://facebook.github.io/watchman/docs/install.html
+1. Install the create-react-native-app CLI
 ```bash
 
 $ npm install -g create-react-native-app
@@ -97,30 +88,27 @@ If having troubles then see [Frequently asked questions section](https://github.
 
 ##### Run on Android
 
-1. Install Java JDK
-
+1. Install Java JDK, go to this page and select JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Install Android Studio and config Android Studio AVD emulator
-
-
-3. If running Examples from chapter 6, 7, 8, 9, 10, 11 then you need to run the below command in terminal to bring up a local server.
-If you skipped the setup process above then remember to navigate to the respective example directory first.
+   1. Install Android Studio https://developer.android.com/studio/
+   1. You may need to "Install missing platform(s) and sync project. https://i.stack.imgur.com/nZHpF.png
+   1. Install virtual device https://www.dev2qa.com/how-to-create-android-virtual-device-avd-in-android-studio/
+   1. Some of you may not see options from the above guide, if so follow this fixes: https://www.google.com/url?q=https://stackoverflow.com/questions/47173708/why-avd-manager-options-are-not-showing-in-android-studio&source=gmail&ust=1537538423306000&usg=AFQjCNGPRyvtJ70n8KtPhcH4C34lJN2Fxw
+   1. If your virtual device has issues starting because of "emulation requires hardaware acceleration" then follow this solution https://stackoverflow.com/questions/29136173/emulator-error-x86-emulation-currently-requires-hardware-acceleration
+3. If running Examples from chapter 6, 7, 8, 9, 10, 11 then you need to run the below command in terminal to bring up a local server. If you skipped the setup process above then remember to navigate to the respective example directory first.
 ```bash
 
 $ yarn run server
 
 ```
-
 4. Open emulator
-
 5. Run on terminal
-
 ```bash
 
 $ yarn run android
 
 ```
-
-If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
+6. If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
 ```bash
 
 $ yarn run android:storybook
@@ -146,6 +134,8 @@ The build will run and feedback will be displayed on the console.
 When the build finishes send yourself a link to the app. I prefer to use share button at the top and send myself link in an email that I open on the device.
 
 3. You may need to be connected to the same WiFi on the computer and a phone. Public WiFi may not work.
+
+4. If still experiencing problems try the steps from this link: https://facebook.github.io/react-native/docs/running-on-device
 
 #### FAQ
 
