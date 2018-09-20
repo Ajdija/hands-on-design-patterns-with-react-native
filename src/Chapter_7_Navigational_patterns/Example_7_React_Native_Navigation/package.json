@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "lint": "node ./node_modules/eslint/bin/eslint.js src",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "server": "node ./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
