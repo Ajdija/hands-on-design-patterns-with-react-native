@@ -15,7 +15,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "./node_modules/react-native-scripts/build/bin/react-native-scripts.js start",
+    "start": "node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
