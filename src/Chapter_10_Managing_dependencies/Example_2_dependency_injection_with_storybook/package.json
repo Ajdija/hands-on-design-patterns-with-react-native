@@ -5,7 +5,7 @@
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "yarn run prestorybook && node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js start",
-    "eject": "react-native-scripts eject",
+    "eject": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js eject",
     "android": "yarn run prestorybook && node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js android",
     "android:storybook": "yarn run prestorybook && concurrently \"storybook start -p 7007\" \"REACT_NATIVE_IS_STORY_BOOK=true node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js android\"",
     "ios": "yarn run prestorybook && node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js ios",
