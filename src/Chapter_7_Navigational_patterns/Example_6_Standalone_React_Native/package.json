@@ -7,7 +7,7 @@
     "test": "jest",
     "lint": "node ./node_modules/eslint/bin/eslint.js src",
     "android": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js android",
-    "ios": "react-native run-ios",
+    "ios": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js ios",
     "server": "node ./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
   },
   "dependencies": {

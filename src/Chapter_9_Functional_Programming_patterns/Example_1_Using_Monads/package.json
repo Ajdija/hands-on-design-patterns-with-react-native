@@ -18,7 +18,7 @@
     "start": "node ./node_modules/react-native-scripts/build/bin/react-native-scripts.js start",
     "eject": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js eject",
     "android": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js android",
-    "ios": "react-native run-ios",
+    "ios": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js ios",
     "test": "node node_modules/jest/bin/jest.js",
     "lint": "node ./node_modules/eslint/bin/eslint.js src",
     "server": "node ./node_modules/json-server/bin/index.js --watch ./src/features/tasks/data/tasks.json"
