@@ -23,4 +23,38 @@ export type AddTaskActionType = {
     task: TaskAddFormData
 };
 
+export type TasksFetchActionType = {
+    type: TasksActionType.TASKS_FETCH_START,
+};
+
+export type TasksFetchCompleteActionType = {
+    type: TasksActionType.TASKS_FETCH_COMPLETE,
+    tasks: TaskType[]
+};
+
+export type TasksFetchErrorActionType = {
+    type: TasksActionType.TASKS_FETCH_ERROR,
+    error: Response
+};
+
+export type TaskFetchActionType = {
+    type: TasksActionType.TASK_FETCH_START,
+    taskId: number
+};
+
+export type TaskFetchCompleteActionType = {
+    type: TasksActionType.TASK_FETCH_COMPLETE,
+    task: TaskType
+};
+
+export type TaskFetchErrorActionType = {
+    type: TasksActionType.TASK_FETCH_ERROR,
+    error: Response
+};
+
+export type TaskReduxActionType =
+    AddTaskActionType |
+    TasksFetchActionType | TasksFetchCompleteActionType | TasksFetchErrorActionType
+    | TaskFetchActionType | TaskFetchCompleteActionType | TaskFetchErrorActionType;
+
 export default TasksActionType;

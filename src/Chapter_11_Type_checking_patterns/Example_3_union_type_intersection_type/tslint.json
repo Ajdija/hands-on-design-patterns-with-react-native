@@ -7,8 +7,7 @@
     "jsx-no-lambda": false,
     "ter-indent": [
       true,
-      4,
-      { "SwitchCase": 4 }
+      4
     ],
     "trailing-comma": false,
     // This rule is here for now because of https://github.com/palantir/tslint-react/issues/120
