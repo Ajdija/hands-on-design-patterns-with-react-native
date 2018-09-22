@@ -25,7 +25,7 @@ const updateTasksState = (
                             (t: (TaskType | undefined)) => t ? t.id === task.id : false),
                         task)
             );
-        }
+        };
 
     return tasksToBeAdded.reduce(tasksToBeAddedReducer, tasksInState);
 };
