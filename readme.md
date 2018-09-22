@@ -154,5 +154,17 @@ $ yarn run server
 ##### Websocket connection error
 Sometimes you need to close emulator and then rerun either `yarn run ios` or `yarn run android`. CTRL+R / CMD+R may give you the old app in some circumstances so closing the emulator and rerunning the command is the quickest fix.
 
-##### Storybook not showing, instead I see a regular app.
+##### Storybook is not showing, instead I see a regular app.
 Sometimes you need to close emulator and then run either `yarn run ios:storybook` or `yarn run android:storybook`. CTRL+R / CMD+R may give you the old app in some circumstances so closing the emulator and rerunning the command is the quickest fix.
+
+##### Error: Cannot find module './'
+If you have below error in Chapter 11 then remove node_modules and run `yarn` again.
+```bash
+$ rimraf ./build
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module './'
+
+```
