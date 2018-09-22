@@ -7,12 +7,14 @@ export interface Nothing {
 export interface Something<T> {
     map: (
         fn: ((a:T) => T)
-    ) => Something<T> | Nothing,
+    ) => MaybeType<T>,
     isNothing: () => false,
     val: () => T
 }
 
-const Maybe = <T>(value: T): (Something<T> | Nothing) => {
+export type MaybeType<T> = Something<T> | Nothing;
+
+const Maybe = <T>(value: T):MaybeType<T> => {
     const Nothing: Nothing = {
         map: () => Nothing,
         isNothing: () => true,
