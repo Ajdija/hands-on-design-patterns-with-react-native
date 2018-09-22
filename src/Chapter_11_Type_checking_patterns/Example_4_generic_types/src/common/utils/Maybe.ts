@@ -5,9 +5,7 @@ export type Nothing = {
 }
 
 export type Something<T> = {
-    map: (
-        fn: ((a:T) => T)
-    ) => MaybeType<T>,
+    map: (fn: (a:T) => T) => MaybeType<T>,
     isNothing: () => false,
     val: () => T
 }
