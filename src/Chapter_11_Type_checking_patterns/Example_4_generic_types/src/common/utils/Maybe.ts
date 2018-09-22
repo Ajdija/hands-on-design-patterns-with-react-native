@@ -1,10 +1,10 @@
-export interface Nothing {
+export type Nothing = {
     map: (args: any) => Nothing,
     isNothing: () => true,
     val: () => null
 }
 
-export interface Something<T> {
+export type Something<T> = {
     map: (
         fn: ((a:T) => T)
     ) => MaybeType<T>,
