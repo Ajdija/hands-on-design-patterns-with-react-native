@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-react"],
+  "rules": {
+    "indent": [true, "spaces"],
+    "import-name": false,
+    "semicolon": [false],
+    "jsx-no-lambda": false,
+    "ter-indent": [
+      true,
+      4,
+      { "SwitchCase": 4 }
+    ],
+    "trailing-comma": false,
+    // This rule is here for now because of https://github.com/palantir/tslint-react/issues/120
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+  }
+}
