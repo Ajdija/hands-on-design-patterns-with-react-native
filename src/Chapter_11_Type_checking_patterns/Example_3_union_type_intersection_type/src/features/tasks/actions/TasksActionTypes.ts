@@ -1,3 +1,6 @@
+import Immutable from 'immutable';
+import {FetchError} from 'node-fetch';
+
 enum TasksActionType {
     ADD_TASK = 'ADD_TASK',
     TASKS_FETCH_START = 'TASKS_FETCH_START',
@@ -29,12 +32,12 @@ export type TasksFetchActionType = {
 
 export type TasksFetchCompleteActionType = {
     type: TasksActionType.TASKS_FETCH_COMPLETE,
-    tasks: TaskType[]
+    tasks: Immutable.List<TaskType>
 };
 
 export type TasksFetchErrorActionType = {
     type: TasksActionType.TASKS_FETCH_ERROR,
-    error: Response
+    error: FetchError
 };
 
 export type TaskFetchActionType = {
@@ -49,7 +52,7 @@ export type TaskFetchCompleteActionType = {
 
 export type TaskFetchErrorActionType = {
     type: TasksActionType.TASK_FETCH_ERROR,
-    error: Response
+    error: FetchError
 };
 
 export type TaskReduxActionType =

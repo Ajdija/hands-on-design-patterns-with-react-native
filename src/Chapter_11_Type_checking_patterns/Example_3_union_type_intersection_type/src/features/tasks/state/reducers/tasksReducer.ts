@@ -75,7 +75,7 @@ const tasksReducer = (
     case TasksActionTypes.TASKS_FETCH_ERROR: {
         const noLoading = state.update('isLoading', () => false);
         const errorState = noLoading.update('hasError', () => true);
-        return errorState.update('errorMsg', () => action.error.statusText);
+        return errorState.update('errorMsg', () => action.error.message);
     }
     default: {
         return state;

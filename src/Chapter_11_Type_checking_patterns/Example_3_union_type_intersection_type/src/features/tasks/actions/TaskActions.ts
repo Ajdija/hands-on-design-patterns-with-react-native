@@ -7,6 +7,8 @@ import TasksActionType, {
     TaskType
 } from './TasksActionTypes';
 import { Dispatch } from 'redux';
+import Immutable from 'immutable';
+import { FetchError } from 'node-fetch';
 
 const addTask = (task:TaskAddFormData): AddTaskActionType => ({
     task,
@@ -17,12 +19,12 @@ const fetchTasksStart = (): TasksFetchActionType => ({
     type: TasksActionType.TASKS_FETCH_START
 });
 
-const fetchTasksComplete = (tasks: TaskType[]):TasksFetchCompleteActionType => ({
+const fetchTasksComplete = (tasks: Immutable.List<TaskType>):TasksFetchCompleteActionType => ({
     tasks,
     type: TasksActionType.TASKS_FETCH_COMPLETE
 });
 
-const fetchTasksError = (error: Response):TasksFetchErrorActionType => ({
+const fetchTasksError = (error: FetchError):TasksFetchErrorActionType => ({
     error,
     type: TasksActionType.TASKS_FETCH_ERROR
 });
@@ -37,7 +39,7 @@ const fetchTaskComplete = (task: TaskType):TaskFetchCompleteActionType => ({
     type: TasksActionType.TASK_FETCH_COMPLETE
 });
 
-const fetchTaskError = (error: Response):TaskFetchErrorActionType => ({
+const fetchTaskError = (error: FetchError):TaskFetchErrorActionType => ({
     error,
     type: TasksActionType.TASK_FETCH_ERROR,
 });
@@ -57,15 +59,15 @@ const ActionTriggers = {
         (dispatch: Dispatch<any>) => (task: TaskType) => dispatch(ActionCreators.addTask(task)),
     fetchTasksStart: (dispatch: Dispatch<any>) => () => dispatch(ActionCreators.fetchTasksStart()),
     fetchTasksComplete: (dispatch: Dispatch<any>) =>
-        (tasks: TaskType[]) => dispatch(ActionCreators.fetchTasksComplete(tasks)),
+        (tasks: Immutable.List<TaskType>) => dispatch(ActionCreators.fetchTasksComplete(tasks)),
     fetchTasksError: (dispatch: Dispatch<any>) =>
-        (error: Response) => dispatch(ActionCreators.fetchTasksError(error)),
+        (error: FetchError) => dispatch(ActionCreators.fetchTasksError(error)),
     fetchTaskStart: (dispatch: Dispatch<any>) =>
         (taskId: number) => dispatch(ActionCreators.fetchTaskStart(taskId)),
     fetchTaskComplete: (dispatch: Dispatch<any>) =>
         (task: TaskType) => dispatch(ActionCreators.fetchTaskComplete(task)),
     fetchTaskError: (dispatch: Dispatch<any>) =>
-        (error: Response) => dispatch(ActionCreators.fetchTaskError(error))
+        (error: FetchError) => dispatch(ActionCreators.fetchTaskError(error))
 };
 
 export default ActionTriggers;
