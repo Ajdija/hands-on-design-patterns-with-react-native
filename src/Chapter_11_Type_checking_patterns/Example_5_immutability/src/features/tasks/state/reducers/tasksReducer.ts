@@ -37,12 +37,16 @@ const tasksReducer = (
         if (!action.task.name) {
             return state;
         }
-        return {...state, entitites: [...state.entities, {
-            id: state.entities.length + 1,
-            name: action.task.name,
-            description: action.task.description,
-            likes: 0
-        }]};
+        return {...state,
+            entities: [
+                ...state.entities, {
+                    id: state.entities.length + 1,
+                    name: action.task.name,
+                    description: action.task.description,
+                    likes: 0
+                }
+            ]
+        };
     }
     case TasksActionTypes.TASKS_FETCH_START: {
         return { ...state, isLoading: true };
@@ -51,14 +55,14 @@ const tasksReducer = (
         return {
             ...state,
             isLoading: false,
-            entitites: updateTasksState(state.entities, [action.task])
+            entities: updateTasksState(state.entities, [action.task])
         };
     }
     case TasksActionTypes.TASKS_FETCH_COMPLETE: {
         return {
             ...state,
             isLoading: false,
-            entitites: updateTasksState(state.entities, action.tasks)
+            entities: updateTasksState(state.entities, action.tasks)
         };
     }
     case TasksActionTypes.TASKS_FETCH_ERROR: {
