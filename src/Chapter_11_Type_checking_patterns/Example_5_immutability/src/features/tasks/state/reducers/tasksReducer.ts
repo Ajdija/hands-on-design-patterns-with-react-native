@@ -2,16 +2,16 @@ import TasksActionTypes, { TaskReduxActionType, TaskType } from '../../actions/T
 import { TasksReducerState } from '../types';
 
 const updateTasksState = (
-    tasksInState: TaskType[],
-    tasksToBeAdded: TaskType[]
+    tasksInState: ReadonlyArray<TaskType>,
+    tasksToBeAdded: ReadonlyArray<TaskType>
 ) => {
     const presentIds = tasksInState.map(t => t.id);
-    const replaceAtIndex = (arr: TaskType[], index: number, newItem: TaskType) => arr
+    const replaceAtIndex = (arr: ReadonlyArray<TaskType>, index: number, newItem: TaskType) => arr
         .slice(0, index)
         .concat([newItem])
         .concat(arr.slice(index + 1, arr.length));
     const tasksToBeAddedReducer =
-        (acc: TaskType[], task: TaskType) => {
+        (acc: ReadonlyArray<TaskType>, task: TaskType) => {
             return (!presentIds.includes(task.id)
                     // New item so add...
                     ? [...acc, task]

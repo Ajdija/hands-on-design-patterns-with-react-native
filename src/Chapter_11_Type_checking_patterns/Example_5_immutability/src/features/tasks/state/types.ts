@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { TaskType } from '../actions/TasksActionTypes';
 
 export type TasksReducerState = Readonly<{
-    entities: TaskType[],
+    entities: ReadonlyArray<TaskType>,
     isLoading: boolean,
     hasError: boolean,
     errorMsg: string

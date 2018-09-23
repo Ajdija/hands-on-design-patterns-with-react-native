@@ -4,7 +4,7 @@ import { LanguageConsumer } from '../../../common/LanguageContext';
 import { TaskType } from '../actions/TasksActionTypes';
 
 type Props = {
-    tasks: TaskType[]
+    tasks: ReadonlyArray<TaskType>
     isLoading: boolean,
     hasError?: boolean,
     errorMsg?: string
