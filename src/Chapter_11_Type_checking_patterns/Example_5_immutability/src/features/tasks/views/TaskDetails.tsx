@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
-import { TaskPropType } from '../state/types';
+import { TaskType } from '../actions/TasksActionTypes';
 
 // TODO: Homework: Implement isLoading / hasError logic
 // You can find similar implementation in views/TaskList.js
 // TODO 2: Make it pretty, use the knowledge from Chapter 3 Style Patterns
-const TaskDetails = ({ task }) => (
+const TaskDetails:React.SFC<{ task: TaskType }> = ({ task = null }) => (
     <View>
         {!task && <ActivityIndicator size="large" color="#0000ff" />}
         {task && (
@@ -26,13 +26,5 @@ const TaskDetails = ({ task }) => (
         )}
     </View>
 );
-
-TaskDetails.defaultProps = {
-    task: null
-};
-
-TaskDetails.propTypes = {
-    task: TaskPropType
-};
 
 export default TaskDetails;
