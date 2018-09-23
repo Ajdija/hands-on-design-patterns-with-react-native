@@ -1,0 +1,116 @@
+{
+  "name": "HandOnDesignPatternsWithReactNativeChapter11Example1",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./node_modules/react-native-scripts-ts/build/bin/crna-entry.js",
+  "scripts": {
+    "prepare": "node node_modules/npm-run-all/bin/npm-run-all clean build:*",
+    "start:ios": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js ios",
+    "start:ios:storybook": "concurrently \"storybook start -p 7007 --config-dir src/storybook\" \"REACT_NATIVE_IS_STORY_BOOK=true node_modules/react-native-scripts/build/bin/react-native-scripts.js ios\"",
+    "start:android": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js android",
+    "start:android:storybook": "concurrently \"storybook start -p 7007 --config-dir src/storybook\" \"REACT_NATIVE_IS_STORY_BOOK=true node_modules/react-native-scripts/build/bin/react-native-scripts.js android\"",
+    "start:any": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js start",
+    "start:test": "node node_modules/jest/bin/jest.js",
+    "android": "node node_modules/npm-run-all/bin/npm-run-all prepare start:android",
+    "android:storybook": "node node_modules/npm-run-all/bin/npm-run-all prepare start:android:storybook",
+    "ios": "node node_modules/npm-run-all/bin/npm-run-all prepare start:ios",
+    "ios:storybook": "node node_modules/npm-run-all/bin/npm-run-all prepare start:ios:storybook",
+    "start": "node node_modules/npm-run-all/bin/npm-run-all prepare start:any",
+    "lint:typescript": "node ./node_modules/tslint/bin/tslint -c tslint.json --project tsconfig.json",
+    "lint:eslint": "node node_modules/eslint/bin/eslint.js --ignore-path .gitignore src",
+    "lint": "node node_modules/npm-run-all/bin/npm-run-all lint:*",
+    "server": "node node_modules/json-server/bin/index.js --watch src/features/tasks/data/tasks.json",
+    "clean": "rimraf ./build",
+    "build:storybook": "rnstl",
+    "build:typescript": "node node_modules/typescript/bin/tsc --resolveJsonModule",
+    "eject": "node node_modules/react-native-scripts/build/bin/react-native-scripts.js eject"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "preset": "jest-expo",
+    "testMatch": [
+      "**/__tests__/**/*.[tj]s?(x)",
+      "**/?(*.)(spec|test).[tj]s?(x)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": "src",
+      "outputFile": "src/storybook/storyLoader.js",
+      "pattern": "**/*story.js"
+    }
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "@storybook/react-native": "^3.4.10",
+    "@types/jest": "^22.2.3",
+    "@types/node-fetch": "^2.1.2",
+    "@types/react": "^16.3.14",
+    "@types/react-native": "^0.55.14",
+    "@types/react-navigation": "^2.0.21",
+    "@types/react-redux": "^6.0.9",
+    "@types/react-test-renderer": "^16.0.1",
+    "@types/storybook__react": "^3.0.9",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^4.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-typescript": "^1.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-typescript": "^0.12.0",
+    "expo": "^27.0.1",
+    "flux": "^3.1.3",
+    "immutable": "^3.8.2",
+    "jest": "^23.6.0",
+    "jest-expo": "~27.0.0",
+    "json-server": "^0.14.0",
+    "npm-run-all": "^4.1.3",
+    "prop-types": "^15.6.1",
+    "react": "16.3.1",
+    "react-dom": "^16.5.1",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-native": "~0.55.2",
+    "react-native-scripts": "1.14.0",
+    "react-native-scripts-ts": "1.15.0",
+    "react-native-storybook-loader": "^1.8.0",
+    "react-native-typescript-transformer": "^1.2.3",
+    "react-navigation": "^2.11.2",
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "16.3.1",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-saga": "v1.0.0-beta.2",
+    "reselect": "^3.0.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^22.4.6",
+    "tslib": "^1.9.1",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.0.3",
+    "typescript-eslint-parser": "^18.0.0",
+    "typings": "^2.1.1"
+  }
+}
