@@ -6,9 +6,9 @@ import {
 } from 'react-navigation';
 
 type NavigateButtonProps = {
-    to: 'string',
+    to: string,
     data: any,
-    text: 'string'
+    text: string
 } & NavigationInjectedProps<NavigationParams>;
 
 export const NavigateButton:React.SFC<NavigateButtonProps> = ({

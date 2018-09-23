@@ -5,9 +5,9 @@ import {
 } from 'react-navigation';
 
 type NavigateButtonProps = {
-    to: 'string',
+    to: string,
     data: any,
-    text: 'string',
+    text: string,
     navigation: NavigationScreenProp<NavigationState, NavigationParams>
 };
 
