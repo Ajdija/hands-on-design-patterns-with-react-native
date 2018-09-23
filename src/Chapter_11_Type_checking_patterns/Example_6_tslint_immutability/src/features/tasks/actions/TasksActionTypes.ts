@@ -11,47 +11,47 @@ enum TasksActionType {
 }
 
 export type TaskAddFormData = Readonly<{
-    name: string,
-    description: string
+    readonly name: string,
+    readonly description: string
 }>
 
 export type TaskType = Readonly<TaskAddFormData & {
-    likes: number,
-    id: number
+    readonly likes: number,
+    readonly id: number
 }>
 
 export type AddTaskActionType = Readonly<{
-    type: TasksActionType.ADD_TASK,
-    task: TaskAddFormData
+    readonly type: TasksActionType.ADD_TASK,
+    readonly task: TaskAddFormData
 }>;
 
 export type TasksFetchActionType = Readonly<{
-    type: TasksActionType.TASKS_FETCH_START,
+    readonly type: TasksActionType.TASKS_FETCH_START,
 }>;
 
 export type TasksFetchCompleteActionType = Readonly<{
-    type: TasksActionType.TASKS_FETCH_COMPLETE,
-    tasks: ReadonlyArray<TaskType>
+    readonly type: TasksActionType.TASKS_FETCH_COMPLETE,
+    readonly tasks: ReadonlyArray<TaskType>
 }>;
 
 export type TasksFetchErrorActionType = Readonly<{
-    type: TasksActionType.TASKS_FETCH_ERROR,
-    error: FetchError
+    readonly type: TasksActionType.TASKS_FETCH_ERROR,
+    readonly error: FetchError
 }>;
 
 export type TaskFetchActionType = Readonly<{
-    type: TasksActionType.TASK_FETCH_START,
-    taskId: number
+    readonly type: TasksActionType.TASK_FETCH_START,
+    readonly taskId: number
 }>;
 
 export type TaskFetchCompleteActionType = Readonly<{
-    type: TasksActionType.TASK_FETCH_COMPLETE,
-    task: TaskType
+    readonly type: TasksActionType.TASK_FETCH_COMPLETE,
+    readonly task: TaskType
 }>;
 
 export type TaskFetchErrorActionType = Readonly<{
-    type: TasksActionType.TASK_FETCH_ERROR,
-    error: FetchError
+    readonly type: TasksActionType.TASK_FETCH_ERROR,
+    readonly error: FetchError
 }>;
 
 export type TaskReduxActionType =

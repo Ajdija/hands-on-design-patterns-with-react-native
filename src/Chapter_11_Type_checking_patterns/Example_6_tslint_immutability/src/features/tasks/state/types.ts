@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import { TaskType } from '../actions/TasksActionTypes';
 
 export type TasksReducerState = Readonly<{
-    entities: ReadonlyArray<TaskType>,
-    isLoading: boolean,
-    hasError: boolean,
-    errorMsg: string
+    readonly entities: ReadonlyArray<TaskType>,
+    readonly isLoading: boolean,
+    readonly hasError: boolean,
+    readonly errorMsg: string
 }>
 
 export type TasksState = {
-    tasks: TasksReducerState
+    readonly tasks: TasksReducerState
 };
 
 export const TaskPropType = PropTypes.shape({

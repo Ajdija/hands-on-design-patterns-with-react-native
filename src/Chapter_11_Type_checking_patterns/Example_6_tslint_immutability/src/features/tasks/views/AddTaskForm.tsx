@@ -1,28 +1,25 @@
 import * as React from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { TaskAddFormData } from '../actions/TasksActionTypes';
 
 export const INITIAL_ADD_TASK_FORM_STATE = {
     name: '',
     description: ''
 };
-export interface TaskState {
-    name: string
-    description?: string
-}
 
 export interface AddTaskProps {
-    addTask: (task: TaskState) => void
+    readonly addTask: (task: TaskAddFormData) => void
 }
 
-class AddTaskForm extends React.Component<AddTaskProps, TaskState>{
+class AddTaskForm extends React.Component<AddTaskProps, TaskAddFormData>{
     constructor(props:AddTaskProps) {
         super(props);
         this.handleSubmit.bind(this);
     }
 
-    state = INITIAL_ADD_TASK_FORM_STATE;
+    readonly state = INITIAL_ADD_TASK_FORM_STATE;
 
-    handleSubmit = () => {
+    readonly handleSubmit = () => {
         this.props.addTask({
             name: this.state.name,
             description: this.state.description

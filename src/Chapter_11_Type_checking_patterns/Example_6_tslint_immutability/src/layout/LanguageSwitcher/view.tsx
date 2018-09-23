@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
 });
 
 type Props = {
-    onLanguageChange: (lang:LANGUAGES) => onLanguageChangeActionType,
-    currentSelection: LANGUAGES
+    readonly onLanguageChange: (lang:LANGUAGES) => onLanguageChangeActionType,
+    readonly currentSelection: LANGUAGES
 }
 
 const LanguageSwitcherView = (props:Props) => (

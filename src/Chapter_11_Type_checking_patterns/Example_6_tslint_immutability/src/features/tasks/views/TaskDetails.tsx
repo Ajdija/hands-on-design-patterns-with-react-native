@@ -5,7 +5,7 @@ import { TaskType } from '../actions/TasksActionTypes';
 // TODO: Homework: Implement isLoading / hasError logic
 // You can find similar implementation in views/TaskList.js
 // TODO 2: Make it pretty, use the knowledge from Chapter 3 Style Patterns
-const TaskDetails:React.SFC<{ task: TaskType }> = ({ task = null }) => (
+const TaskDetails:React.SFC<{ readonly task: TaskType }> = ({ task = null }) => (
     <View>
         {!task && <ActivityIndicator size="large" color="#0000ff" />}
         {task && (

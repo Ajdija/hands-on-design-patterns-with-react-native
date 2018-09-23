@@ -1,8 +1,8 @@
 import TasksActionType from './TasksActionTypes';
 
 export type FetchTaskStartActionType = {
-    type: TasksActionType,
-    payload: {
-        taskId: string
+    readonly type: TasksActionType,
+    readonly payload: {
+        readonly taskId: string
     }
 };

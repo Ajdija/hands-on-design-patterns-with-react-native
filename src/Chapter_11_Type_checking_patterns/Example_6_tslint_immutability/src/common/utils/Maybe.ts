@@ -1,19 +1,19 @@
 export type Nothing = {
-    map: (args: any) => Nothing,
-    isNothing: () => true,
-    val: () => null
+    readonly map: (args: any) => Nothing,
+    readonly isNothing: () => true,
+    readonly val: () => null
 }
 
 export type Something<T> = {
-    map: <Z>(fn: ((a:T) => Z)) => MaybeType<Z>,
-    isNothing: () => false,
-    val: () => T
+    readonly map: <Z>(fn: ((a:T) => Z)) => MaybeType<Z>,
+    readonly isNothing: () => false,
+    readonly val: () => T
 }
 
 export type MaybeType<T> = {
-    map: <Z>(fn: ((a:T) => Z)) => (MaybeType<Z> | Nothing),
-    isNothing: () => boolean,
-    val: () => (T | null)
+    readonly map: <Z>(fn: ((a:T) => Z)) => (MaybeType<Z> | Nothing),
+    readonly isNothing: () => boolean,
+    readonly val: () => (T | null)
 }
 
 const Maybe = <T>(value: T):MaybeType<T> => {

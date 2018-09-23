@@ -3,8 +3,8 @@ import LANGUAGES from '../constants';
 import { Dispatch } from 'redux';
 
 export type onLanguageChangeActionType = {
-    type: LanguageChangeActionTypes.CHANGE,
-    language: LANGUAGES
+    readonly type: LanguageChangeActionTypes.CHANGE,
+    readonly language: LANGUAGES
 }
 
 export type LanguageChangeActions = onLanguageChangeActionType;
