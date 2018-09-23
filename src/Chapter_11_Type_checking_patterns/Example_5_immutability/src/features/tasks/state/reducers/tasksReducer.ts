@@ -1,30 +1,22 @@
-import Immutable from 'immutable';
 import TasksActionTypes, { TaskReduxActionType, TaskType } from '../../actions/TasksActionTypes';
 import { TasksReducerState } from '../types';
 
 const updateTasksState = (
-    tasksInState: Immutable.List<TaskType>,
-    tasksToBeAdded: Immutable.List<TaskType>
+    tasksInState: TaskType[],
+    tasksToBeAdded: TaskType[]
 ) => {
-    const presentIds = tasksInState.map((t: (TaskType | undefined)) => t ? t.id : -1);
+    const presentIds = tasksInState.map(t => t.id);
+    const replaceAtIndex = (arr: TaskType[], index: number, newItem: TaskType) => arr
+        .slice(0, index)
+        .concat([newItem])
+        .concat(arr.slice(index + 1, arr.length));
     const tasksToBeAddedReducer =
-        (acc: (Immutable.List<TaskType> | undefined), task: (TaskType | undefined)) => {
-            if (!task || !acc) {
-                return;
-            }
+        (acc: TaskType[], task: TaskType) => {
             return (!presentIds.includes(task.id)
                     // New item so add...
-                    ? acc.push({
-                        id: task.id,
-                        name: task.name,
-                        description: task.description,
-                        likes: task.likes
-                    })
+                    ? [...acc, task]
                     // Item already in collection, find index and replace
-                    : acc.set(
-                        acc.findIndex(
-                            (t: (TaskType | undefined)) => t ? t.id === task.id : false),
-                        task)
+                    : replaceAtIndex(acc, acc.findIndex(t => t.id === task.id), task)
             );
         };
 
@@ -32,12 +24,12 @@ const updateTasksState = (
 };
 
 const tasksReducer = (
-    state:TasksReducerState = Immutable.Map({
-        entities: Immutable.List<TaskType>([]),
+    state:TasksReducerState = {
+        entities: [],
         isLoading: false,
         hasError: false,
         errorMsg: ''
-    }),
+    },
     action:TaskReduxActionType
 ) => {
     switch (action.type) {
@@ -45,38 +37,37 @@ const tasksReducer = (
         if (!action.task.name) {
             return state;
         }
-        return state.update('entities', entities => entities.push({
-            id: entities.size + 1,
+        return {...state, entitites: [...state.entities, {
+            id: state.entities.length + 1,
             name: action.task.name,
             description: action.task.description,
             likes: 0
-        }));
+        }]};
     }
     case TasksActionTypes.TASKS_FETCH_START: {
-        return state.update('isLoading', () => true);
+        return { ...state, isLoading: true };
     }
     case TasksActionTypes.TASK_FETCH_COMPLETE: {
-        return state.update(
-                    'entities',
-                    entities => updateTasksState(
-                        entities,
-                        Immutable.List<TaskType>([action.task])
-                    )
-            ).update('isLoading', () => false);
+        return {
+            ...state,
+            isLoading: false,
+            entitites: updateTasksState(state.entities, [action.task])
+        };
     }
     case TasksActionTypes.TASKS_FETCH_COMPLETE: {
-        return state.update(
-                'entities',
-                entities => updateTasksState(
-                    entities,
-                    Immutable.List<TaskType>(action.tasks)
-                )
-            ).update('isLoading', () => false);
+        return {
+            ...state,
+            isLoading: false,
+            entitites: updateTasksState(state.entities, action.tasks)
+        };
     }
     case TasksActionTypes.TASKS_FETCH_ERROR: {
-        const noLoading = state.update('isLoading', () => false);
-        const errorState = noLoading.update('hasError', () => true);
-        return errorState.update('errorMsg', () => action.error.message);
+        return {
+            ...state,
+            isLoading: false,
+            hasError: true,
+            errorMsg: action.error.message
+        };
     }
     default: {
         return state;

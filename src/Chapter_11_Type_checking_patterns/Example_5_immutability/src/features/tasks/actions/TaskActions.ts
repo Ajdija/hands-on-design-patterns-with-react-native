@@ -7,7 +7,6 @@ import TasksActionType, {
     TaskType
 } from './TasksActionTypes';
 import { Dispatch } from 'redux';
-import Immutable from 'immutable';
 import { FetchError } from 'node-fetch';
 
 const addTask = (task:TaskAddFormData): AddTaskActionType => ({
@@ -19,7 +18,7 @@ const fetchTasksStart = (): TasksFetchActionType => ({
     type: TasksActionType.TASKS_FETCH_START
 });
 
-const fetchTasksComplete = (tasks: Immutable.List<TaskType>):TasksFetchCompleteActionType => ({
+const fetchTasksComplete = (tasks: TaskType[]):TasksFetchCompleteActionType => ({
     tasks,
     type: TasksActionType.TASKS_FETCH_COMPLETE
 });
@@ -59,7 +58,7 @@ const ActionTriggers = {
         (dispatch: Dispatch<any>) => (task: TaskType) => dispatch(ActionCreators.addTask(task)),
     fetchTasksStart: (dispatch: Dispatch<any>) => () => dispatch(ActionCreators.fetchTasksStart()),
     fetchTasksComplete: (dispatch: Dispatch<any>) =>
-        (tasks: Immutable.List<TaskType>) => dispatch(ActionCreators.fetchTasksComplete(tasks)),
+        (tasks: TaskType[]) => dispatch(ActionCreators.fetchTasksComplete(tasks)),
     fetchTasksError: (dispatch: Dispatch<any>) =>
         (error: FetchError) => dispatch(ActionCreators.fetchTasksError(error)),
     fetchTaskStart: (dispatch: Dispatch<any>) =>

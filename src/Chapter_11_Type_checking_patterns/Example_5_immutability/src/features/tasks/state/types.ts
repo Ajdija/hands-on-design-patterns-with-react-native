@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
-import Immutable from 'immutable';
+import { TaskType } from '../actions/TasksActionTypes';
 
-export type TasksReducerState = Immutable.Map<string, any>;
+export type TasksReducerState = Readonly<{
+    entities: TaskType[],
+    isLoading: boolean,
+    hasError: boolean,
+    errorMsg: string
+}>
 
 export type TasksState = {
     tasks: TasksReducerState

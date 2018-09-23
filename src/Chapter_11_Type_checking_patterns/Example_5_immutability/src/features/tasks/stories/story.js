@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Immutable from 'immutable';
 
 import { storiesOf } from '@storybook/react-native';
 import TaskList from '../views/TaskList';
@@ -11,7 +10,7 @@ storiesOf('TaskList', module)
     .addDecorator(scrollViewDecorator)
     .add('with one task', () => (
         <TaskList
-            tasks={Immutable.List([exampleData.tasks[0]])}
+            tasks={[exampleData.tasks[0]]}
             hasError={false}
             isLoading={false}
             NavButton={NavButtonExample}
@@ -19,7 +18,7 @@ storiesOf('TaskList', module)
     ))
     .add('with 7 tasks', () => (
         <TaskList
-            tasks={Immutable.List(exampleData.tasks)}
+            tasks={exampleData.tasks}
             hasError={false}
             isLoading={false}
             NavButton={NavButtonExample}
@@ -27,7 +26,7 @@ storiesOf('TaskList', module)
     ))
     .add('with loading state', () => (
         <TaskList
-            tasks={Immutable.List([])}
+            tasks={[]}
             hasError={false}
             isLoading
             NavButton={NavButtonExample}
@@ -35,7 +34,7 @@ storiesOf('TaskList', module)
     ))
     .add('with error', () => (
         <TaskList
-            tasks={Immutable.List([])}
+            tasks={[]}
             errorMsg="Custom error: Unable to download stories"
             hasError
             isLoading={false}
@@ -44,7 +43,7 @@ storiesOf('TaskList', module)
     ))
     .add('with error and loading', () => (
         <TaskList
-            tasks={Immutable.List([])}
+            tasks={[]}
             errorMsg="Custom error: Unable to download stories"
             hasError
             isLoading

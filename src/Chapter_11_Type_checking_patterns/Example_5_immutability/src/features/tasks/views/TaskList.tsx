@@ -1,12 +1,20 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import PropTypes from 'prop-types';
-import ImmutablePropTypes from 'react-immutable-proptypes';
-import { TaskPropType } from '../state/types';
+import { TasksReducerState } from '../state/types';
 import { LanguageConsumer } from '../../../common/LanguageContext';
+import { TaskType } from '../actions/TasksActionTypes';
 
-const TaskList = ({
-    tasks, isLoading, hasError, errorMsg, NavButton
+type Props = TasksReducerState & {
+    tasks: TaskType[]
+    NavButton: React.SFC<{
+        to: string,
+        data: any,
+        text: string
+    }>
+};
+
+const TaskList:React.SFC<Props> = ({
+    tasks, isLoading, hasError, errorMsg = 'Error has occurred while fetching tasks.', NavButton
 }) => (
     <View style={styles.taskList}>
         <LanguageConsumer>
@@ -51,18 +59,6 @@ const TaskList = ({
         ))}
     </View>
 );
-
-TaskList.defaultProps = {
-    errorMsg: 'Error has occurred while fetching tasks.'
-};
-
-TaskList.propTypes = {
-    tasks: ImmutablePropTypes.listOf(TaskPropType).isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    hasError: PropTypes.bool.isRequired,
-    errorMsg: PropTypes.string,
-    NavButton: PropTypes.func.isRequired
-};
 
 const styles = StyleSheet.create({
     taskList: {

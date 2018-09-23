@@ -1,4 +1,3 @@
-import Immutable from 'immutable';
 import { FetchError } from 'node-fetch';
 
 enum TasksActionType {
@@ -32,7 +31,7 @@ export type TasksFetchActionType = {
 
 export type TasksFetchCompleteActionType = {
     type: TasksActionType.TASKS_FETCH_COMPLETE,
-    tasks: Immutable.List<TaskType>
+    tasks: TaskType[]
 };
 
 export type TasksFetchErrorActionType = {

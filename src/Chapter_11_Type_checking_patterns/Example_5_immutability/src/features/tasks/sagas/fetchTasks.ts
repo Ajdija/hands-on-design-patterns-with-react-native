@@ -1,6 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import Immutable from 'immutable';
-import TasksActionTypes, { TaskType } from '../actions/TasksActionTypes';
+import TasksActionTypes from '../actions/TasksActionTypes';
 import { ActionCreators } from '../actions/TaskActions';
 import apiFetch from '../../../common/utils/apiFetch';
 
@@ -10,7 +9,7 @@ export function* fetchTasks() {
         yield put(ActionCreators.fetchTasksError(tasks.error));
     } else {
         const json = yield call([tasks.response, 'json']);
-        yield put(ActionCreators.fetchTasksComplete(Immutable.List<TaskType>(json)));
+        yield put(ActionCreators.fetchTasksComplete(json));
     }
 }
 

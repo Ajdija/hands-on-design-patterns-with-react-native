@@ -9,22 +9,22 @@ export const tasksSelector =
 
 export const tasksEntitiesSelector = createSelector(
     tasksSelector,
-    maybeTasks => maybeTasks.map((tasks: TasksReducerState) => tasks.get('entities'))
+    maybeTasks => maybeTasks.map((tasks: TasksReducerState) => tasks.entities)
 );
 
 export const tasksIsLoadingSelector = createSelector(
     tasksSelector,
-    maybeTasks => maybeTasks.map(tasks => tasks.get('isLoading'))
+    maybeTasks => maybeTasks.map(tasks => tasks.isLoading)
 );
 
 export const tasksHasErrorSelector = createSelector(
     tasksSelector,
-    maybeTasks => maybeTasks.map(tasks => tasks.get('hasError'))
+    maybeTasks => maybeTasks.map(tasks => tasks.hasError)
 );
 
 export const tasksErrorMsgSelector = createSelector(
     tasksSelector,
-    maybeTasks => maybeTasks.map(tasks => tasks.get('errorMsg'))
+    maybeTasks => maybeTasks.map(tasks => tasks.errorMsg)
 );
 
 export const getTaskById = (taskId: number) => createSelector(
