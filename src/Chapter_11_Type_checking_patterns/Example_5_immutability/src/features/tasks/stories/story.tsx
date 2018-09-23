@@ -28,7 +28,7 @@ storiesOf('TaskList', module)
         <TaskList
             tasks={[]}
             hasError={false}
-            isLoading
+            isLoading={true}
             NavButton={NavButtonExample}
         />
     ))
@@ -36,7 +36,7 @@ storiesOf('TaskList', module)
         <TaskList
             tasks={[]}
             errorMsg="Custom error: Unable to download stories"
-            hasError
+            hasError={true}
             isLoading={false}
             NavButton={NavButtonExample}
         />
@@ -45,8 +45,8 @@ storiesOf('TaskList', module)
         <TaskList
             tasks={[]}
             errorMsg="Custom error: Unable to download stories"
-            hasError
-            isLoading
+            hasError={true}
+            isLoading={true}
             NavButton={NavButtonExample}
         />
     ));

@@ -52,7 +52,7 @@
     "react-native-storybook-loader": {
       "searchDir": "src",
       "outputFile": "src/storybook/storyLoader.js",
-      "pattern": "**/*story.js"
+      "pattern": "**/*story.*"
     }
   },
   "dependencies": {
@@ -69,6 +69,7 @@
     "@types/react-redux": "^6.0.9",
     "@types/react-test-renderer": "^16.0.1",
     "@types/storybook__react": "^3.0.9",
+    "@types/storybook__react-native": "^3.0.2",
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
     "babel-runtime": "^6.26.0",

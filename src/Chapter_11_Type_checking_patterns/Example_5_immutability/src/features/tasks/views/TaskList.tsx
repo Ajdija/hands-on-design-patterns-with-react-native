@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import { TasksReducerState } from '../state/types';
 import { LanguageConsumer } from '../../../common/LanguageContext';
 import { TaskType } from '../actions/TasksActionTypes';
 
-type Props = TasksReducerState & {
+type Props = {
     tasks: TaskType[]
+    isLoading: boolean,
+    hasError?: boolean,
+    errorMsg?: string
     NavButton: React.SFC<{
         to: string,
         data: any,
@@ -14,7 +16,11 @@ type Props = TasksReducerState & {
 };
 
 const TaskList:React.SFC<Props> = ({
-    tasks, isLoading, hasError, errorMsg = 'Error has occurred while fetching tasks.', NavButton
+    tasks,
+    isLoading,
+    NavButton,
+    hasError = false,
+    errorMsg = 'Error has occurred while fetching tasks.'
 }) => (
     <View style={styles.taskList}>
         <LanguageConsumer>
