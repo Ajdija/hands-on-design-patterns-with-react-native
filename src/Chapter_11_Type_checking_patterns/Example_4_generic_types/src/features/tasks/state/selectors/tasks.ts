@@ -1,11 +1,15 @@
 import { createSelector } from 'reselect';
-import Maybe from '../../../../common/utils/Maybe';
+import Maybe, { MaybeType } from '../../../../common/utils/Maybe';
+import { TasksReducerState } from '../types';
+import { State } from '../../../../flux/types';
 
-export const tasksSelector = state => Maybe(state).map(x => x.tasks);
+export const tasksSelector =
+    (state: State):MaybeType<TasksReducerState> =>
+        (Maybe<State>(state)).map((x:State) => x.tasks);
 
 export const tasksEntitiesSelector = createSelector(
     tasksSelector,
-    maybeTasks => maybeTasks.map(tasks => tasks.get('entities'))
+    maybeTasks => maybeTasks.map((tasks: TasksReducerState) => tasks.get('entities'))
 );
 
 export const tasksIsLoadingSelector = createSelector(
@@ -23,8 +27,7 @@ export const tasksErrorMsgSelector = createSelector(
     maybeTasks => maybeTasks.map(tasks => tasks.get('errorMsg'))
 );
 
-export const getTaskById = taskId => createSelector(
+export const getTaskById = (taskId: number) => createSelector(
     tasksEntitiesSelector,
-    entities => entities.map(e => e.find(task => task.id === taskId))
+    (entities: any) => entities.map((e: any) => e.find((task: any) => task.id === taskId))
 );
-

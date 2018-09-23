@@ -1,5 +1,6 @@
 import Immutable from 'immutable';
 import TasksActionTypes, { TaskReduxActionType, TaskType } from '../../actions/TasksActionTypes';
+import { TasksReducerState } from '../types';
 
 const updateTasksState = (
     tasksInState: Immutable.List<TaskType>,
@@ -31,7 +32,7 @@ const updateTasksState = (
 };
 
 const tasksReducer = (
-    state = Immutable.Map<string, any>({
+    state:TasksReducerState = Immutable.Map({
         entities: Immutable.List<TaskType>([]),
         isLoading: false,
         hasError: false,

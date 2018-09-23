@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import {FetchError} from 'node-fetch';
+import { FetchError } from 'node-fetch';
 
 enum TasksActionType {
     ADD_TASK = 'ADD_TASK',

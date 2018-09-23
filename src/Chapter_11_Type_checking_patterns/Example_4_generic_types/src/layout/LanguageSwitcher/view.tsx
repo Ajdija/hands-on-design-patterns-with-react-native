@@ -1,39 +1,39 @@
 import * as React from 'react';
 import { Text, StyleSheet, TouchableHighlight } from 'react-native';
-import PropTypes from 'prop-types';
-import { LANG_ENGLISH, LANG_POLISH } from './constants';
+import LANGUAGES from './constants';
+import { onLanguageChangeActionType } from './actions/LanguageChangeActions';
 
 export const styles = StyleSheet.create({
     languageText: { fontSize: 18, color: '#ddd' },
     selectedText: { color: '#000' }
 });
 
-const LanguageSwitcherView = props => (
+type Props = {
+    onLanguageChange: (lang:LANGUAGES) => onLanguageChangeActionType,
+    currentSelection: LANGUAGES
+}
+
+const LanguageSwitcherView = (props:Props) => (
     <React.Fragment>
-        <TouchableHighlight onPress={() => props.onLanguageChange(LANG_ENGLISH)}>
+        <TouchableHighlight onPress={() => props.onLanguageChange(LANGUAGES.ENGLISH)}>
             <Text
                 style={[
                     styles.languageText,
-                    props.currentSelection === LANG_ENGLISH && styles.selectedText
+                    props.currentSelection === LANGUAGES.ENGLISH && styles.selectedText
                 ]}
             >English
             </Text>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => props.onLanguageChange(LANG_POLISH)}>
+        <TouchableHighlight onPress={() => props.onLanguageChange(LANGUAGES.POLISH)}>
             <Text
                 style={[
                     styles.languageText,
-                    props.currentSelection === LANG_POLISH && styles.selectedText
+                    props.currentSelection === LANGUAGES.POLISH && styles.selectedText
                 ]}
             >Polish
             </Text>
         </TouchableHighlight>
     </React.Fragment>
 );
-
-LanguageSwitcherView.propTypes = {
-    onLanguageChange: PropTypes.func.isRequired,
-    currentSelection: PropTypes.string.isRequired
-};
 
 export default LanguageSwitcherView;

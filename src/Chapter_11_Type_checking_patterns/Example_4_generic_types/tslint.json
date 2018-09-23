@@ -5,6 +5,7 @@
     "import-name": false,
     "semicolon": [false],
     "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
     "ter-indent": [
       true,
       4

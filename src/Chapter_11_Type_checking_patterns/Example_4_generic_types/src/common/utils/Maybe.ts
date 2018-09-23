@@ -5,12 +5,16 @@ export type Nothing = {
 }
 
 export type Something<T> = {
-    map: (fn: (a:T) => T) => MaybeType<T>,
+    map: <Z>(fn: ((a:T) => Z)) => MaybeType<Z>,
     isNothing: () => false,
     val: () => T
 }
 
-export type MaybeType<T> = Something<T> | Nothing;
+export type MaybeType<T> = {
+    map: <Z>(fn: ((a:T) => Z)) => (MaybeType<Z> | Nothing),
+    isNothing: () => boolean,
+    val: () => (T | null)
+}
 
 const Maybe = <T>(value: T):MaybeType<T> => {
     const Nothing: Nothing = {
@@ -19,7 +23,7 @@ const Maybe = <T>(value: T):MaybeType<T> => {
         val: () => null
     };
     const Something = <T>(val: T):Something<T> => ({
-        map: (fn: (a:T) => T) => Maybe(fn(val)),
+        map: <Z>(fn: ((a:T) => Z)) => Maybe(fn(val)),
         isNothing: () => false,
         val: () => val
     });
