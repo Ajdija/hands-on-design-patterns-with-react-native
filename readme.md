@@ -114,8 +114,11 @@ $ yarn run server
 
 ```
 Example run of Example 1 in Chapter 6 on macOS with Android and iPhone simulator: https://www.youtube.com/watch?v=G1NDMOkpxQ0
+
 4. Open emulator
+
 5. Run on terminal
+
 ```bash
 
 $ yarn run android
