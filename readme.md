@@ -12,13 +12,13 @@ Mateusz Grzesiukiewicz
 
 #### Setup ####
 1. Install Git https://git-scm.com/downloads
+   1. Windows users in installator please always choose "next" unless you know what you are doing.
 1. Install Node.js 8.X.
    1. Linux/Mac:
       1. Install nvm https://github.com/creationix/nvm#install-script
       1. Linux/Mac Install Node.js using nvm $ nvm install 8.11.4
    1. Windows: install Node.js with executable file.
       1. Install Node.js 8.X https://nodejs.org/en/download/
-1. Install Git https://git-scm.com/downloads
 1. Install yarn https://yarnpkg.com/
 1. Install watchman https://facebook.github.io/watchman/docs/install.html
 1. Install the create-react-native-app CLI
@@ -36,7 +36,7 @@ $ npm install -g create-react-native-app
 GitHub repository link: https://github.com/Ajdija/hands-on-design-patterns-with-react-native
 Example terminal command downloading the code:
 ```bash
-$ git clone git@github.com:Ajdija/hands-on-design-patterns-with-react-native.git
+$ git clone https://github.com/Ajdija/hands-on-design-patterns-with-react-native.git
 ```
 
 3. Go to the example folder and install dependencies. Example folders are located in src directory within downloaded code files directory. You need to change directory to the specific Example directory. For instance:
@@ -67,6 +67,8 @@ If you skipped the setup process above then remember to navigate to the respecti
 $ yarn run server
 
 ```
+Example run of Example 1 in Chapter 6 on macOS with Android and iPhone simulator: https://www.youtube.com/watch?v=G1NDMOkpxQ0
+(remember to keep the terminal/console tab with "yarn run server" running)
 
 3. Run on terminal
 
@@ -101,6 +103,7 @@ If having troubles then see [Frequently asked questions section](https://github.
 $ yarn run server
 
 ```
+Example run of Example 1 in Chapter 6 on macOS with Android and iPhone simulator: https://www.youtube.com/watch?v=G1NDMOkpxQ0
 4. Open emulator
 5. Run on terminal
 ```bash
@@ -142,6 +145,9 @@ When the build finishes send yourself a link to the app. I prefer to use share b
 ##### Bootstrap note
 All of the examples from this book were bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 The most recent version of Create React Native App guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+
+##### fatal: unable to checkout working tree / Unable to create file [...].xcscheme filename too long
+Some files have too long filenames for your specific (most likely Windows) system. Proceed as if everything was all right.
 
 ##### I see the app but it says "Network request failed"
 If you are running examples from chapters 6, 7, 8, 9, 10 or 11 you should also start the server first.
