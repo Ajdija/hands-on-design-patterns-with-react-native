@@ -78,6 +78,16 @@ $ yarn run ios
 
 ```
 
+or below command and after the packager starts choose "I" on keyboard.
+
+```bash
+
+$ yarn run start
+
+```
+The `yarn run start` allows you to run both Android and iPhone simulators at the same time. Example run of Example 1 in Chapter 6 on macOS with Android and iPhone simulator: https://www.youtube.com/watch?v=G1NDMOkpxQ0
+(If you are testing examples from Chapter 6 and later, remember to keep the terminal/console tab with "yarn run server" running)
+
 If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
 ```bash
 
