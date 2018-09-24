@@ -103,9 +103,9 @@ If having troubles then see [Frequently asked questions section](https://github.
 1. Install Java JDK, go to this page and select JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Install Android Studio and config one Android Virtual Device (Android Studio AVD)
    1. Install Android Studio https://developer.android.com/studio/
-   1. If you struggle with virtual device configuration (AVD) then follow this video: https://www.youtube.com/watch?v=tsAPy2yxZCs (If you do not see API 28, then choose any other that you have available)
    1. You may need to "Install missing platform(s) and sync project. https://i.stack.imgur.com/nZHpF.png
    1. Install virtual device https://www.dev2qa.com/how-to-create-android-virtual-device-avd-in-android-studio/
+   1. If you struggle with virtual device configuration (AVD) then follow this video: https://www.youtube.com/watch?v=tsAPy2yxZCs (If you do not see API 28, then choose any other that you have available)
    1. Some of you may not see options from the above guide, if so follow this fixes: https://stackoverflow.com/questions/47173708/why-avd-manager-options-are-not-showing-in-android-studio
    1. If your virtual device has issues starting because of "emulation requires hardaware acceleration" then follow this solution https://stackoverflow.com/questions/29136173/emulator-error-x86-emulation-currently-requires-hardware-acceleration
 3. If running Examples from chapter 6, 7, 8, 9, 10, 11 then you need to run the below command in terminal to bring up a local server. If you skipped the setup process above then remember to navigate to the respective example directory first.
