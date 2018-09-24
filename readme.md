@@ -103,7 +103,7 @@ If having troubles then see [Frequently asked questions section](https://github.
 1. Install Java JDK, go to this page and select JDK: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Install Android Studio and config one Android Virtual Device (Android Studio AVD)
    1. Install Android Studio https://developer.android.com/studio/
-   1. If you striggle with virtual device configuration (AVD) then follow this video: https://www.youtube.com/watch?v=tsAPy2yxZCs
+   1. If you struggle with virtual device configuration (AVD) then follow this video: https://www.youtube.com/watch?v=tsAPy2yxZCs (If you do not see API 28, then choose any other that you have available)
    1. You may need to "Install missing platform(s) and sync project. https://i.stack.imgur.com/nZHpF.png
    1. Install virtual device https://www.dev2qa.com/how-to-create-android-virtual-device-avd-in-android-studio/
    1. Some of you may not see options from the above guide, if so follow this fixes: https://stackoverflow.com/questions/47173708/why-avd-manager-options-are-not-showing-in-android-studio
@@ -125,6 +125,8 @@ Example run of Example 1 in Chapter 6 on macOS with Android and iPhone simulator
 $ yarn run android
 
 ```
+If you see message: "Error running adb: No Android device found" then you have not configured Android Virtual Device (AVD) in step 1 above. Follow this video for step by step guide: https://www.youtube.com/watch?v=tsAPy2yxZCs
+
 6. If running Examples from chapter 10 or chapter 11 then you may also use storybook version.
 ```bash
 
