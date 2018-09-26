@@ -9,7 +9,9 @@ import TaskActions from './data/TaskActions';
 
 export const fetchTasks = (dispatch) => {
     TaskActions.fetchStart(dispatch)();
-    return fetch('http://localhost:3000/tasks')
+    return ((Platform.OS === 'ios')
+        ? fetch('http://localhost:3000/tasks')
+        : fetch('http://10.0.2.2:3000/tasks'))
         .then(response => response.json())
         .then(responseJSON =>
             TaskActions.fetchComplete(dispatch)(Immutable.List(responseJSON)))
