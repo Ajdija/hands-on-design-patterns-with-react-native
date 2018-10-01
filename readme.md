@@ -1,12 +1,14 @@
-#### Hands-on Design Patterns with React Native
+# Hands-on Design Patterns with React Native
 
-This is a public repository provided to a book readers and potential book readers. Here you can access full examples that are mentioned in a book but could not fit entirely. Each example is standalone and you need to install dependencies (`yarn install --pure-lockfile`) and then run expo within that example directory (`yarn start`).
+<a href="https://www.packtpub.com/application-development/hands-design-patterns-react-native"><img src="https://www.packtpub.com/sites/default/files/cover%20-%20Copy_10182.png" alt="Hands-On Design Patterns with React Native" height="256px" align="right"></a>
+
+This is the code repository for [Hands-On Design Patterns with React Native](https://www.packtpub.com/application-development/hands-design-patterns-react-native), published by Packt.
+
+Every example is standalone, see [Setup and Running guidelines](https://github.com/Ajdija/hands-on-design-patterns-with-react-native#setup).
 
 #### Author note
 
-Frameworks and libraries come and go. Design patterns usually stay for longer. In this book we do a mix of learning React Native and design patterns relevant to this ecosystem.
-I'm really happy I can share my experience and patterns that I have learnt. Hopefully you will use this knowledge to build well thought and easy to maintain codebases.
-Good luck with this endeavours!
+Frameworks and libraries come and go. Design patterns usually stay for longer. In this book, we do a mix of learning React Native and design patterns relevant to this ecosystem. When it comes to React, the essential knowledge about design patterns is spread all over the place. Sometimes it's buried in proprietary code bases. This book brings it to you. I call them **idea patterns**: hands-on design patterns, which are explained on a real working examples. In this book we use React Native, but you can successfully take most of those patterns to web development in React, or even other frameworks, such as Angular or Vue. Hopefully you will use this knowledge to build well thought-out and easy-to-maintain code bases. Good luck with this endeavor!
 
 Mateusz Grzesiukiewicz
 
