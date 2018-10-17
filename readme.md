@@ -192,3 +192,6 @@ module.js:540
 Error: Cannot find module './'
 
 ```
+##### Chapter 5, example 4 is not working on Android
+MobX newest version does not work with Android. I'm waiting until they fix the problem and then will update this codebase.
+[Monitor this issue to get latest updates.](https://github.com/mobxjs/mobx-react/issues/498)
